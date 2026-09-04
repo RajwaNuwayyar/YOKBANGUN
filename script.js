@@ -105,6 +105,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Touch swipe support on mobile/HP
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carouselTrack.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        carouselTrack.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeDistance = touchStartX - touchEndX;
+            const threshold = 40; // min swipe distance in px
+            const slides = carouselTrack.querySelectorAll('.project-slide');
+            const visible = getVisibleSlides();
+            const maxIndex = Math.max(0, slides.length - visible);
+
+            if (swipeDistance > threshold && currentIndex < maxIndex) {
+                // Swiped Left -> Next
+                currentIndex++;
+                updateCarousel();
+            } else if (swipeDistance < -threshold && currentIndex > 0) {
+                // Swiped Right -> Prev
+                currentIndex--;
+                updateCarousel();
+            }
+        }
+
         window.addEventListener('resize', updateCarousel);
         updateCarousel();
     }

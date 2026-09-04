@@ -597,23 +597,223 @@
 
 @media (max-width: 768px) {
     .detail-hero-section {
-        padding-top: 110px;
+        padding-top: 100px;
+        padding-bottom: 30px;
     }
     
+    .breadcrumb-bar {
+        flex-wrap: wrap;
+        gap: 6px;
+        font-size: 0.7rem;
+        margin-bottom: 20px;
+    }
+
+    .detail-header-grid {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .detail-badge {
+        font-size: 0.65rem;
+        padding: 4px 10px;
+        margin-bottom: 12px;
+    }
+
+    .detail-title {
+        font-size: clamp(1.8rem, 6.5vw, 2.6rem);
+        margin-bottom: 10px;
+    }
+
+    .detail-subtitle {
+        font-size: 0.92rem;
+        line-height: 1.6;
+    }
+
+    .consult-primary-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 0.74rem;
+    }
+
+    .detail-showcase-section {
+        padding-bottom: 50px;
+    }
+
     .main-image-wrapper {
-        height: 360px;
+        height: 340px;
+    }
+
+    .image-zoom-hint {
+        bottom: 12px;
+        right: 12px;
+        font-size: 0.68rem;
+        padding: 6px 12px;
+    }
+
+    .project-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 20px;
+    }
+
+    .stat-item-box {
+        padding: 16px 14px;
+    }
+
+    .stat-value {
+        font-size: 1.3rem;
+    }
+
+    .stat-sub {
+        font-size: 0.7rem;
+    }
+
+    .detail-editorial-section {
+        padding: 60px 0;
+    }
+
+    .editorial-layout-grid {
+        gap: 40px;
+    }
+
+    .editorial-heading {
+        font-size: clamp(1.5rem, 5vw, 2.2rem);
+        margin-bottom: 18px;
+    }
+
+    .editorial-paragraphs p {
+        font-size: 0.92rem;
+        line-height: 1.8;
+        margin-bottom: 16px;
+    }
+
+    .key-highlights-box {
+        margin-top: 28px;
+        padding: 24px 18px;
+    }
+
+    .highlights-title {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+
+    .highlights-list li {
+        font-size: 0.88rem;
+        gap: 10px;
+    }
+
+    .specs-summary-card {
+        padding: 24px 18px;
+    }
+
+    .specs-card-title {
+        font-size: 1.3rem;
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+    }
+
+    .detail-gallery-section {
+        padding: 60px 0;
+    }
+
+    .gallery-section-header {
+        margin-bottom: 30px;
     }
 
     .detail-gallery-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .gallery-card-img-wrap {
+        height: 240px;
+    }
+
+    .gallery-card-info {
+        padding: 16px;
+    }
+
+    .other-projects-section {
+        padding: 60px 0;
+    }
+
+    .other-header-row {
+        margin-bottom: 28px;
+    }
+
+    .other-projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .other-card-img {
+        height: 200px;
+    }
+
+    .bottom-cta-section {
+        padding: 60px 0;
     }
 
     .bottom-cta-box {
-        padding: 30px 20px;
+        padding: 32px 20px;
+        gap: 24px;
     }
 
-    .wa-large-btn, .consult-primary-btn {
+    .cta-title {
+        font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+    }
+
+    .cta-desc {
+        font-size: 0.88rem;
+        line-height: 1.65;
+    }
+
+    .wa-large-btn {
         width: 100%;
         justify-content: center;
+        padding: 15px 24px;
+        font-size: 0.8rem;
     }
 }
+
+@media (max-width: 480px) {
+    .main-image-wrapper {
+        height: 260px;
+    }
+
+    .project-stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stat-item-box {
+        padding: 14px 10px;
+    }
+
+    .stat-value {
+        font-size: 1.15rem;
+    }
+
+    .stat-label {
+        font-size: 0.6rem;
+    }
+
+    .spec-row {
+        flex-direction: column;
+        gap: 4px;
+        padding-bottom: 10px;
+    }
+
+    .spec-v {
+        text-align: left;
+    }
+
+    .gallery-card-img-wrap {
+        height: 200px;
+    }
+
+    .other-card-img {
+        height: 180px;
+    }
+}
+

@@ -473,12 +473,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // ── 9. Mobile Navbar Toggle ──
     const navToggle = document.getElementById('navToggle');
     const mainNav = document.getElementById('mainNav');
+    const navItems = document.querySelectorAll('.nav-item');
 
     if (navToggle && mainNav) {
         navToggle.addEventListener('click', () => {
             navToggle.classList.toggle('active');
             mainNav.classList.toggle('active');
             document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+        });
+
+        navItems.forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
     }
 
