@@ -1,0 +1,32 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.agents/
+.gemini/
+
+# Node & Package Managers (if applicable)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Temporary / Log files
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Large Video Exports / Temp Render Files (Optional)
+# *.mp4
+# *.mov
