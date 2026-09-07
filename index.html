@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YOK BANGUN.ID — Arsitektur Kustom Mewah &amp; Konstruksi Presisi</title>
-    <meta name="description" content="YOK BANGUN.ID — Jasa perancangan desain arsitektur dan pelaksana konstruksi bangunan presisi berlokasi di Hargosari, Sraten, Gatak, Sukoharjo, Jawa Tengah.">
-    <meta name="keywords" content="arsitek sukoharjo, jasa bangun rumah solo, kontraktor sukoharjo, desain rumah modern, kost exclusive, yok bangun">
-    
-    <!-- Google Fonts: Cormorant Garamond & Montserrat -->
+    <meta name="description"
+        content="YOK BANGUN.ID — Jasa perancangan desain arsitektur dan pelaksana konstruksi bangunan presisi berlokasi di Hargosari, Sraten, Gatak, Sukoharjo, Jawa Tengah.">
+    <meta name="keywords"
+        content="arsitek sukoharjo, jasa bangun rumah solo, kontraktor sukoharjo, desain rumah modern, kost exclusive, yok bangun">
+
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- GSAP & ScrollTrigger for Signature Stacking Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Header / Nav -->
+    <!-- 1. Header / Nav -->
     <header class="site-header" id="header">
         <div class="nav-container">
             <a href="#hero" class="brand-link">
@@ -30,14 +40,16 @@
             <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="#hero" class="nav-item active">Beranda</a></li>
-                    <li><a href="#statement" class="nav-item">Tentang Kami</a></li>
+                    <li><a href="#services" class="nav-item">Layanan</a></li>
                     <li><a href="#selected-projects" class="nav-item">Pilihan Proyek</a></li>
+                    <li><a href="#gallery" class="nav-item">Galeri Desain</a></li>
                     <li><a href="#contact" class="nav-item">Kontak</a></li>
                 </ul>
             </nav>
 
             <div class="nav-actions">
-                <a href="https://wa.me/6285742926695?text=Halo%20YOK%20BANGUN.ID,%20saya%20tertarik%20untuk%20konsultasi%20desain%20dan%20pembangunan." target="_blank" rel="noopener" class="nav-cta-btn">
+                <a href="https://wa.me/6285742926695?text=Halo%20YOK%20BANGUN.ID,%20saya%20tertarik%20untuk%20konsultasi%20desain%20dan%20pembangunan."
+                    target="_blank" rel="noopener" class="nav-cta-btn">
                     Konsultasi Gratis
                 </a>
                 <button class="nav-toggle-btn" id="navToggle" aria-label="Menu Navigasi">
@@ -48,7 +60,7 @@
         </div>
     </header>
 
-    <!-- Hero Section with Background Video -->
+    <!-- 2. Hero Section with Background Video -->
     <section id="hero" class="hero-section">
         <div class="video-container">
             <video autoplay muted loop playsinline id="heroVideo" class="background-video">
@@ -58,16 +70,21 @@
         </div>
 
         <div class="hero-content">
-            <p class="hero-eyebrow">ARSITEKTUR KUSTOM MEWAH &amp; KONSTRUKSI PRESISI</p>
-            <h1 class="hero-heading">YOK BANGUN.ID</h1>
-            <p class="hero-location-text">
+            <p class="hero-eyebrow reveal-tag">ARSITEKTUR KUSTOM MEWAH &amp; KONSTRUKSI PRESISI</p>
+            <h1 class="hero-heading reveal-mask">
+                <span class="reveal-mask-inner shimmer-text">YOK BANGUN.ID</span>
+            </h1>
+            <p class="hero-location-text reveal-fade-up delay-2">
                 HARGOSARI, SRATEN, GATAK, SUKOHARJO — JAWA TENGAH
             </p>
-            
-            <div class="hero-actions">
+
+            <div class="hero-actions reveal-btn delay-3">
                 <a href="#selected-projects" class="hero-link-btn">
                     <span>LIHAT PILIHAN PROYEK</span>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
                 </a>
             </div>
         </div>
@@ -78,353 +95,669 @@
         </a>
     </section>
 
-    <!-- About Section / Tentang Kami -->
-    <section id="statement" class="editorial-about-section">
+    <!-- 3. Section "TENTANG KAMI" (#statement) -->
+    <section id="statement" class="about-section">
         <div class="container-wide">
-            <div class="about-clean-grid">
-                <div class="about-clean-media">
-                    <img src="assets/DESIGN/RUMAH 450 JT/home 1.png" alt="Desain Arsitektur Modern YOK BANGUN.ID" class="about-clean-img">
-                </div>
-                <div class="about-clean-content">
-                    <span class="sub-header">TENTANG KAMI</span>
-                    <h2 class="about-clean-headline">
-                        KARYA ARSITEKTUR &amp;<br>
-                        KONSTRUKSI PRESISI
+            <div class="about-grid">
+                <div class="about-story-col">
+                    <span class="section-kicker reveal-tag">TENTANG KAMI</span>
+                    <h2 class="about-headline reveal-mask">
+                        <span class="reveal-mask-inner">KARYA ARSITEKTUR &amp;<br>KONSTRUKSI PRESISI</span>
                     </h2>
-                    <p class="about-clean-text">
-                        <strong>YOK BANGUN.ID</strong> adalah studio perancangan arsitektur dan pelaksana konstruksi bangunan yang berpusat di <strong>Hargosari, Sraten, Kec. Gatak, Kabupaten Sukoharjo, Jawa Tengah</strong>.
+                    <p class="about-lead reveal-fade-up delay-1">
+                        <strong>YOK BANGUN.ID</strong> adalah studio perancangan arsitektur dan pelaksana konstruksi
+                        bangunan yang berpusat di <strong>Hargosari, Sraten, Kec. Gatak, Kabupaten Sukoharjo, Jawa
+                            Tengah</strong>.
                     </p>
-                    <p class="about-clean-text">
-                        Kami mengintegrasikan perencanaan desain 3D yang detail dengan pelaksanaan konstruksi di lapangan. Mulai dari pembangunan rumah tinggal berkonsep modern minimalis dan Scandinavian, kost eksklusif bertingkat, klinik dan fasilitas komersial, hingga renovasi menyeluruh.
+                    <p class="about-desc reveal-fade-up delay-2">
+                        Kami mengintegrasikan perencanaan desain 3D yang detail dengan pelaksanaan konstruksi di
+                        lapangan. Mulai dari pembangunan rumah tinggal berkonsep modern minimalis dan Scandinavian, kost
+                        eksklusif bertingkat, klinik dan fasilitas komersial, hingga renovasi menyeluruh.
                     </p>
-                    <p class="about-clean-text">
-                        Setiap proyek dikerjakan dengan standar mutu ketat, spesifikasi material pilihan, dan kalkulasi anggaran yang transparan untuk mewujudkan bangunan yang kokoh, fungsional, dan bernilai estetika tinggi.
+                    <p class="about-desc reveal-fade-up delay-3">
+                        Setiap proyek dikerjakan dengan standar mutu ketat, spesifikasi material pilihan, dan kalkulasi
+                        anggaran yang transparan untuk mewujudkan bangunan yang kokoh, fungsional, dan bernilai estetika
+                        tinggi.
                     </p>
-                    <div class="about-clean-action">
-                        <a href="#selected-projects" class="classic-underline-btn">LIHAT PILIHAN DESAIN &rarr;</a>
+                    <a href="#selected-projects" class="about-action reveal-btn delay-4">
+                        <span>LIHAT PILIHAN DESAIN</span>
+                        <span>&rarr;</span>
+                    </a>
+                </div>
+
+                <div class="about-stats-col">
+                    <div class="stats-grid">
+                        <div class="stat-card reveal-card delay-1">
+                            <span class="stat-number">6 Bulan</span>
+                            <h3 class="stat-label">Garansi Pemeliharaan</h3>
+                            <p class="stat-sub">Garansi pekerjaan fisik selama 6 bulan setelah serah terima kunci
+                                sebagai komitmen mutu dan tanggung jawab kami.</p>
+                        </div>
+                        <div class="stat-card reveal-card delay-2">
+                            <span class="stat-number">1 Atap</span>
+                            <h3 class="stat-label">One Stop Service Terpadu</h3>
+                            <p class="stat-sub">Perencanaan desain 3D detail terintegrasi langsung dengan eksekusi
+                                konstruksi fisik di lapangan.</p>
+                        </div>
+                        <div class="stat-card reveal-card delay-3">
+                            <span class="stat-number">SNI</span>
+                            <h3 class="stat-label">Standar Mutu Ketat</h3>
+                            <p class="stat-sub">Spesifikasi material pilihan dan ketelitian instalasi struktural untuk
+                                bangunan kokoh dan bernilai estetika tinggi.</p>
+                        </div>
+                        <div class="stat-card reveal-card delay-4">
+                            <span class="stat-number">Transparan</span>
+                            <h3 class="stat-label">Manajemen RAB Disiplin</h3>
+                            <p class="stat-sub">Kalkulasi anggaran biaya yang sangat rinci dan terbuka tanpa markup atau
+                                biaya tersembunyi.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Selected Projects Showcase Carousel Section (Click to Open Detail Page) -->
-    <section id="selected-projects" class="selected-projects-section">
-        <div class="section-title-bar">
-            <div class="title-left">
-                <span class="sub-header">PORTOFOLIO PILIHAN</span>
-                <h2 class="main-header">PILIHAN PROYEK DESAIN</h2>
-                <p class="section-lead-note">Klik pada salah satu kartu proyek untuk membaca spesifikasi lengkap, denah, dan rincian arsitektur.</p>
+    <!-- 4. Section "LAYANAN UTAMA" (#services) -->
+    <section id="services" class="services-section">
+        <div class="container-wide">
+            <div class="services-header">
+                <h2 class="services-headline reveal-mask">
+                    <span class="reveal-mask-inner">LAYANAN UTAMA</span>
+                </h2>
+                <p class="services-lead reveal-fade-up delay-1">
+                    Empat pilar layanan terpadu YokBangun.id untuk menjawab seluruh kebutuhan desain arsitektur dan
+                    konstruksi fisik Anda.
+                </p>
             </div>
-            <div class="carousel-nav-arrows">
-                <button class="arrow-btn prev-arrow" id="prevSlide" aria-label="Geser ke Kiri">&#x2190;</button>
-                <button class="arrow-btn next-arrow" id="nextSlide" aria-label="Geser ke Kanan">&#x2192;</button>
-            </div>
-        </div>
 
-        <div class="carousel-wrapper">
-            <div class="carousel-track" id="projectCarousel">
-                
-                <!-- Project 1: Scandinavian -->
-                <div class="project-slide">
-                    <a href="project-detail.html?id=scandinavian" class="project-card-link" aria-label="Buka Detail Rumah Scandinavian">
-                        <div class="project-image-box">
-                            <img src="assets/DESIGN/SCANDINAVIAN 2,5 JT PERMETER/Tampak Depan.png" alt="Rumah Scandinavian 2.5 Jt Per Meter">
-                            <div class="slide-overlay-info">
-                                <span class="tag-pill">2,5 JT / M² • PILIHAN</span>
-                                <h3 class="slide-title">RUMAH SCANDINAVIAN</h3>
-                                <p class="slide-desc">LT 100 m² (10x10) LB ±70 m² — Fasad kayu alami, carport, &amp; taman depan-belakang.</p>
-                                <span class="slide-cta-badge">LIHAT DETAIL PROYEK &rarr;</span>
-                            </div>
-                        </div>
-                    </a>
+            <div class="expanding-cards-container reveal-card delay-2" id="servicesAccordion">
+
+                <!-- Service 1: Desain Arsitektur & 3D -->
+                <div class="service-card active" data-index="0" tabindex="0">
+                    <img src="assets/DESIGN/SCANDINAVIAN 2,5 JT PERMETER/Tampak Depan.png" alt="Desain Arsitektur & 3D"
+                        class="service-card-bg">
+                    <div class="service-card-overlay"></div>
+                    <div class="service-collapsed-label">
+                        <span class="col-num">01</span>
+                        <span>Desain 3D</span>
+                    </div>
+                    <div class="service-expanded-content">
+                        <div class="service-number">01</div>
+                        <h3 class="service-title">Desain Arsitektur &amp; 3D</h3>
+                        <p class="service-text">
+                            Visualisasi 3D rendering fotorealistik, gambar kerja IMB/PBG, denah tata ruang fungsional,
+                            dan detail fasad modern.
+                        </p>
+                        <a href="https://wa.me/6285742926695?text=Halo%20YOK%20BANGUN.ID,%20saya%20ingin%20konsultasi%20desain%20arsitektur."
+                            target="_blank" rel="noopener" class="service-btn">
+                            Konsultasi Desain &rarr;
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Project 2: Rumah 450 JT -->
-                <div class="project-slide">
-                    <a href="project-detail.html?id=rumah-450-jt" class="project-card-link" aria-label="Buka Detail Rumah 450 JT">
-                        <div class="project-image-box">
-                            <img src="assets/DESIGN/RUMAH 450 JT/home 1.png" alt="Rumah 450 JT Modern Minimalis">
-                            <div class="slide-overlay-info">
-                                <span class="tag-pill">RUMAH 450 JT • ELEGAN</span>
-                                <h3 class="slide-title">MODERN MINIMALIS ELEGAN</h3>
-                                <p class="slide-desc">Fasad batu alam andesit berpadu panel kayu dan aksen pencahayaan LED warm.</p>
-                                <span class="slide-cta-badge">LIHAT DETAIL PROYEK &rarr;</span>
-                            </div>
+                <!-- Service 2: Bangun Rumah Tinggal -->
+                <div class="service-card" data-index="1" tabindex="0">
+                    <img src="assets/DESIGN/RUMAH 450 JT/home 1.png" alt="Bangun Rumah Tinggal" class="service-card-bg">
+                    <div class="service-card-overlay"></div>
+                    <div class="service-collapsed-label">
+                        <span class="col-num">02</span>
+                        <span>Rumah Tinggal</span>
+                    </div>
+                    <div class="service-expanded-content">
+                        <div class="service-number">02</div>
+                        <h3 class="service-title">Bangun Rumah Tinggal</h3>
+                        <p class="service-text">
+                            Pembangunan rumah baru mulai dari Rp 2 Jt-an/m² hingga rumah mewah berkonsep Scandinavian
+                            dan modern kontemporer.
+                        </p>
+                        <a href="https://wa.me/6285742926695?text=Halo%20YOK%20BANGUN.ID,%20saya%20ingin%20konsultasi%20bangun%20rumah%20tinggal."
+                            target="_blank" rel="noopener" class="service-btn">
+                            Konsultasi Rumah &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3: Kost & Komersial -->
+                <div class="service-card" data-index="2" tabindex="0">
+                    <img src="assets/DESIGN/KOST EXCLUSIVE 30 KAMAR/TAMPAK DEPAN.png" alt="Kost & Komersial"
+                        class="service-card-bg">
+                    <div class="service-card-overlay"></div>
+                    <div class="service-collapsed-label">
+                        <span class="col-num">03</span>
+                        <span>Kost &amp; Komersial</span>
+                    </div>
+                    <div class="service-expanded-content">
+                        <div class="service-number">03</div>
+                        <h3 class="service-title">Kost &amp; Komersial</h3>
+                        <p class="service-text">
+                            Pembangunan kost eksklusif, ruko, klinik, dan tempat usaha dengan orientasi imbal hasil
+                            (ROI) yang optimal.
+                        </p>
+                        <a href="https://wa.me/6285742926695?text=Halo%20YOK%20BANGUN.ID,%20saya%20ingin%20konsultasi%20properti%20komersial."
+                            target="_blank" rel="noopener" class="service-btn">
+                            Konsultasi Komersial &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 4: Renovasi & Penambahan -->
+                <div class="service-card" data-index="3" tabindex="0">
+                    <img src="assets/DESIGN/warehouse_modern.jpg" alt="Renovasi & Penambahan" class="service-card-bg">
+                    <div class="service-card-overlay"></div>
+                    <div class="service-collapsed-label">
+                        <span class="col-num">04</span>
+                        <span>Renovasi</span>
+                    </div>
+                    <div class="service-expanded-content">
+                        <div class="service-number">04</div>
+                        <h3 class="service-title">Renovasi &amp; Penambahan</h3>
+                        <p class="service-text">
+                            Transformasi hunian lama menjadi baru, peningkatan lantai bangunan, perbaikan struktur, dan
+                            renovasi interior.
+                        </p>
+                        <a href="https://wa.me/6285742926695?text=Halo%20YOK%20BANGUN.ID,%20saya%20ingin%20konsultasi%20renovasi%20bangunan."
+                            target="_blank" rel="noopener" class="service-btn">
+                            Konsultasi Renovasi &rarr;
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Section "PILIHAN PROYEK DESAIN" (#selected-projects) - Signature Stacking Cards -->
+    <section id="selected-projects" class="projects-section">
+        <div class="container-wide">
+            <div class="projects-header">
+                <h2 class="projects-headline reveal-mask">
+                    <span class="reveal-mask-inner">PILIHAN PROYEK DESAIN</span>
+                </h2>
+                <p class="projects-lead reveal-fade-up delay-1">
+                    Klik pada salah satu kartu proyek untuk membaca spesifikasi lengkap, denah, dan rincian arsitektur.
+                </p>
+            </div>
+
+            <!-- Stacking Sticky Cards List -->
+            <div class="projects-showcase-list" id="stackingCardsList">
+
+                <!-- Project 1: Scandinavian -->
+                <div class="project-item-card" data-card="1">
+                    <div class="project-thumb-box">
+                        <img src="assets/DESIGN/SCANDINAVIAN 2,5 JT PERMETER/Tampak Depan.png"
+                            alt="Rumah Scandinavian 2,5 Jt Per Meter" class="project-thumb-img">
+                        <span class="project-badge-pill">2,5 JT / M² • PILIHAN</span>
+                    </div>
+                    <div class="project-info-box">
+                        <span class="project-location-meta">SUKOHARJO — RUMAH TINGGAL CUSTOM</span>
+                        <h3 class="project-item-title">RUMAH SCANDINAVIAN</h3>
+                        <p class="project-item-desc">
+                            LT 100 m² (10x10) LB ±70 m² — Fasad kayu alami, carport, &amp; taman depan-belakang.
+                        </p>
+                        <div class="project-specs-pills">
+                            <span class="spec-chip">LT 100 m² (10x10)</span>
+                            <span class="spec-chip">LB ±70 m²</span>
+                            <span class="spec-chip">Fasad Kayu Alami</span>
+                            <span class="spec-chip">Carport &amp; Taman</span>
                         </div>
-                    </a>
+                        <a href="project-detail.html?id=scandinavian" class="project-action-link">
+                            <span>LIHAT DETAIL PROYEK</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Modern Minimalis Elegan (Rumah 450 JT) -->
+                <div class="project-item-card" data-card="2">
+                    <div class="project-thumb-box">
+                        <img src="assets/DESIGN/RUMAH 450 JT/home 1.png" alt="Modern Minimalis Elegan"
+                            class="project-thumb-img">
+                        <span class="project-badge-pill">RUMAH 450 JT • ELEGAN</span>
+                    </div>
+                    <div class="project-info-box">
+                        <span class="project-location-meta">SUKOHARJO — HUNIAN MODERN BERTINGKAT</span>
+                        <h3 class="project-item-title">MODERN MINIMALIS ELEGAN</h3>
+                        <p class="project-item-desc">
+                            Fasad batu alam andesit berpadu panel kayu dan aksen pencahayaan LED warm.
+                        </p>
+                        <div class="project-specs-pills">
+                            <span class="spec-chip">Batu Alam Andesit</span>
+                            <span class="spec-chip">Panel Kayu Tahan Cuaca</span>
+                            <span class="spec-chip">Aksen LED Warm Light</span>
+                            <span class="spec-chip">Balkon Atas</span>
+                        </div>
+                        <a href="project-detail.html?id=rumah-450-jt" class="project-action-link">
+                            <span>LIHAT DETAIL PROYEK</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Project 3: Kost Exclusive 30 Kamar -->
-                <div class="project-slide">
-                    <a href="project-detail.html?id=kost-exclusive" class="project-card-link" aria-label="Buka Detail Kost Exclusive 30 Kamar">
-                        <div class="project-image-box">
-                            <img src="assets/DESIGN/KOST EXCLUSIVE 30 KAMAR/TAMPAK DEPAN.png" alt="Kost Exclusive 30 Kamar">
-                            <div class="slide-overlay-info">
-                                <span class="tag-pill">PROYEK KOMERSIAL</span>
-                                <h3 class="slide-title">KOST EXCLUSIVE 30 KAMAR</h3>
-                                <p class="slide-desc">3 Lantai fungsional mewah dengan garasi 6 mobil, void sirkulasi, &amp; lobby.</p>
-                                <span class="slide-cta-badge">LIHAT DETAIL PROYEK &rarr;</span>
-                            </div>
+                <div class="project-item-card" data-card="3">
+                    <div class="project-thumb-box">
+                        <img src="assets/DESIGN/KOST EXCLUSIVE 30 KAMAR/TAMPAK DEPAN.png" alt="Kost Exclusive 30 Kamar"
+                            class="project-thumb-img">
+                        <span class="project-badge-pill">PROYEK KOMERSIAL</span>
+                    </div>
+                    <div class="project-info-box">
+                        <span class="project-location-meta">SOLO RAYA — INVESTASI 3 LANTAI</span>
+                        <h3 class="project-item-title">KOST EXCLUSIVE 30 KAMAR</h3>
+                        <p class="project-item-desc">
+                            3 Lantai fungsional mewah dengan garasi 6 mobil, void sirkulasi, &amp; lobby.
+                        </p>
+                        <div class="project-specs-pills">
+                            <span class="spec-chip">3 Lantai Bangunan</span>
+                            <span class="spec-chip">30 Kamar Tidur</span>
+                            <span class="spec-chip">Garasi 6 Mobil &amp; 30+ Motor</span>
+                            <span class="spec-chip">Void Sirkulasi &amp; Lobby</span>
                         </div>
-                    </a>
+                        <a href="project-detail.html?id=kost-exclusive" class="project-action-link">
+                            <span>LIHAT DETAIL PROYEK</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Project 4: Rumah 2 Jt-an Permeter -->
-                <div class="project-slide">
-                    <a href="project-detail.html?id=rumah-2-jt" class="project-card-link" aria-label="Buka Detail Rumah 35 M2 Mulai 2 Jt Permeter">
-                        <div class="project-image-box">
-                            <img src="assets/DESIGN/RUMAH MULAI DR 2JTAAN PERMETER/HOME 1.png" alt="Rumah 35 M2 Mulai 2 Juta Permeter">
-                            <div class="slide-overlay-info">
-                                <span class="tag-pill">MULAI 2 JT / M²</span>
-                                <h3 class="slide-title">RUMAH 35 M² KOMPAK &amp; EFISIEN</h3>
-                                <p class="slide-desc">Desain fungsional 2 kamar tidur, pencahayaan alami dengan bujet terjangkau.</p>
-                                <span class="slide-cta-badge">LIHAT DETAIL PROYEK &rarr;</span>
-                            </div>
+                <!-- Project 4: Rumah 35 M2 Kompak & Efisien -->
+                <div class="project-item-card" data-card="4">
+                    <div class="project-thumb-box">
+                        <img src="assets/DESIGN/RUMAH MULAI DR 2JTAAN PERMETER/HOME 1.png"
+                            alt="Rumah 35 M2 Kompak & Efisien" class="project-thumb-img">
+                        <span class="project-badge-pill">MULAI 2 JT / M²</span>
+                    </div>
+                    <div class="project-info-box">
+                        <span class="project-location-meta">JAWA TENGAH — TYPE KOMPAK EFISIEN</span>
+                        <h3 class="project-item-title">RUMAH 35 M² KOMPAK &amp; EFISIEN</h3>
+                        <p class="project-item-desc">
+                            Desain fungsional 2 kamar tidur, pencahayaan alami dengan bujet terjangkau.
+                        </p>
+                        <div class="project-specs-pills">
+                            <span class="spec-chip">Tipe Kompak 35 m²</span>
+                            <span class="spec-chip">Kavling 6 x 12 M</span>
+                            <span class="spec-chip">2 Kamar Tidur</span>
+                            <span class="spec-chip">Bujet Terjangkau</span>
                         </div>
-                    </a>
+                        <a href="project-detail.html?id=rumah-2-jt" class="project-action-link">
+                            <span>LIHAT DETAIL PROYEK</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Project 5: Scandinavian Denah & Spesifikasi -->
-                <div class="project-slide">
-                    <a href="project-detail.html?id=scandinavian" class="project-card-link" aria-label="Buka Denah Scandinavian">
-                        <div class="project-image-box">
-                            <img src="assets/DESIGN/SCANDINAVIAN 2,5 JT PERMETER/Denah.png" alt="Denah dan Spesifikasi Rumah Scandinavian">
-                            <div class="slide-overlay-info">
-                                <span class="tag-pill">DENAH &amp; SPESIFIKASI</span>
-                                <h3 class="slide-title">DENAH SCANDINAVIAN 100 M²</h3>
-                                <p class="slide-desc">Layout ergonomis 2 kamar tidur, dapur, ruang keluarga, dan cross-ventilation.</p>
-                                <span class="slide-cta-badge">LIHAT DETAIL PROYEK &rarr;</span>
-                            </div>
+                <!-- Project 5: Denah Scandinavian 100 M2 -->
+                <div class="project-item-card" data-card="5">
+                    <div class="project-thumb-box">
+                        <img src="assets/DESIGN/SCANDINAVIAN 2,5 JT PERMETER/Denah.png" alt="Denah Scandinavian 100 M2"
+                            class="project-thumb-img">
+                        <span class="project-badge-pill">DENAH &amp; SPESIFIKASI</span>
+                    </div>
+                    <div class="project-info-box">
+                        <span class="project-location-meta">LAYOUT ARSITEKTUR TATA RUANG</span>
+                        <h3 class="project-item-title">DENAH SCANDINAVIAN 100 M²</h3>
+                        <p class="project-item-desc">
+                            Layout ergonomis 2 kamar tidur, dapur, ruang keluarga, dan cross-ventilation.
+                        </p>
+                        <div class="project-specs-pills">
+                            <span class="spec-chip">Luas Tanah 100 m²</span>
+                            <span class="spec-chip">2 KT &amp; 1 KM</span>
+                            <span class="spec-chip">Dapur &amp; R. Tamu</span>
+                            <span class="spec-chip">Cross-Ventilation</span>
                         </div>
-                    </a>
+                        <a href="project-detail.html?id=scandinavian" class="project-action-link">
+                            <span>LIHAT DETAIL PROYEK</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Project 6: Rumah 450 JT Alternatif -->
-                <div class="project-slide">
-                    <a href="project-detail.html?id=rumah-450-jt" class="project-card-link" aria-label="Buka Varian Fasad Rumah 450 JT">
-                        <div class="project-image-box">
-                            <img src="assets/DESIGN/RUMAH 450 JT/home 2.png" alt="Modern Minimalis Opsi Fasad">
-                            <div class="slide-overlay-info">
-                                <span class="tag-pill">VARIAN FASAD</span>
-                                <h3 class="slide-title">6 PILIHAN FASAD MODERN</h3>
-                                <p class="slide-desc">Pilihan material kustom sesuai selera dan preferensi estetika Anda.</p>
-                                <span class="slide-cta-badge">LIHAT DETAIL PROYEK &rarr;</span>
-                            </div>
+                <!-- Project 6: 6 Pilihan Fasad Modern -->
+                <div class="project-item-card" data-card="6">
+                    <div class="project-thumb-box">
+                        <img src="assets/DESIGN/RUMAH 450 JT/home 2.png" alt="6 Pilihan Fasad Modern"
+                            class="project-thumb-img">
+                        <span class="project-badge-pill">VARIAN FASAD</span>
+                    </div>
+                    <div class="project-info-box">
+                        <span class="project-location-meta">VARIAN DESAIN EKSTERIOR</span>
+                        <h3 class="project-item-title">6 PILIHAN FASAD MODERN</h3>
+                        <p class="project-item-desc">
+                            Pilihan material kustom sesuai selera dan preferensi estetika Anda.
+                        </p>
+                        <div class="project-specs-pills">
+                            <span class="spec-chip">6 Opsi Desain Fasad</span>
+                            <span class="spec-chip">Kustomisasi Material</span>
+                            <span class="spec-chip">Render 3D Fotorealistik</span>
+                            <span class="spec-chip">Estetika Tropis Modern</span>
                         </div>
-                    </a>
+                        <a href="project-detail.html?id=rumah-450-jt" class="project-action-link">
+                            <span>LIHAT DETAIL PROYEK</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Project 7: Klinik Baby Spa dr. S -->
-                <div class="project-slide">
-                    <a href="project-detail.html?id=klinik-baby-spa" class="project-card-link" aria-label="Buka Portofolio Klinik Baby Spa Wonogiri">
-                        <div class="project-image-box">
-                            <img src="assets/PORTOFOLIO/PEMBANGUNAN KLINIK BABY SPA dr S GIRIWON WONOGIRI 3024/dokumentasi before-after/WhatsApp Image 2026-09-02 at 11.30.29.jpeg" alt="Pembangunan Klinik Baby Spa Wonogiri">
-                            <div class="slide-overlay-info">
-                                <span class="tag-pill">PROYEK FISIK NYATA</span>
-                                <h3 class="slide-title">KLINIK BABY SPA dr. S</h3>
-                                <p class="slide-desc">Pembangunan gedung 2 lantai di Giriwono, Wonogiri dari nol sampai serah terima.</p>
-                                <span class="slide-cta-badge">LIHAT DETAIL PROYEK &rarr;</span>
-                            </div>
+                <!-- Project 7: Klinik Baby Spa dr. S Wonogiri -->
+                <div class="project-item-card" data-card="7">
+                    <div class="project-thumb-box">
+                        <img src="assets/PORTOFOLIO/PEMBANGUNAN KLINIK BABY SPA dr S GIRIWON WONOGIRI 3024/dokumentasi before-after/WhatsApp Image 2026-09-02 at 11.46.26.jpeg"
+                            alt="Pembangunan Klinik Baby Spa Wonogiri" class="project-thumb-img">
+                        <span class="project-badge-pill accent">PROYEK FISIK NYATA</span>
+                    </div>
+                    <div class="project-info-box">
+                        <span class="project-location-meta">GIRIWONO, WONOGIRI — PELAKSANAAN KONSTRUKSI</span>
+                        <h3 class="project-item-title">KLINIK BABY SPA dr. S</h3>
+                        <p class="project-item-desc">
+                            Pembangunan gedung 2 lantai di Giriwono, Wonogiri dari nol sampai serah terima.
+                        </p>
+                        <div class="project-specs-pills">
+                            <span class="spec-chip">Gedung 2 Lantai</span>
+                            <span class="spec-chip">Struktur Beton Bertulang</span>
+                            <span class="spec-chip">Giriwono, Wonogiri</span>
+                            <span class="spec-chip">Tahap 1 s/d Selesai</span>
                         </div>
-                    </a>
+                        <a href="project-detail.html?id=klinik-baby-spa" class="project-action-link">
+                            <span>LIHAT DETAIL PROYEK</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
                 </div>
 
+            </div>
+
+            <div class="projects-bottom-bar reveal-card delay-1">
+                <p>Klik salah satu kartu proyek atau jelajahi koleksi denah dan foto konstruksi nyata di galeri kami.
+                </p>
+                <a href="#gallery" class="projects-bottom-btn">
+                    <span>LIHAT ARSIP GALERI LENGKAP</span>
+                    <span>&rarr;</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Deep Dramatic Black Section: CARA KERJA KAMI (Philosophy Section) -->
-    <section id="philosophy" class="philosophy-section">
+    <!-- 6. Section "CARA KERJA KAMI" (#philosophy) -->
+    <section id="philosophy" class="process-section">
         <div class="container-wide">
-            <div class="philosophy-grid">
-                <div class="philosophy-title-col">
-                    <h2 class="philosophy-main-title">
-                        CARA KERJA<br>KAMI
+            <div class="process-grid">
+
+                <div class="process-sticky-col">
+                    <span class="section-kicker reveal-tag">STANDAR KUALITAS YOK BANGUN.ID</span>
+                    <h2 class="process-headline reveal-mask">
+                        <span class="reveal-mask-inner">CARA KERJA KAMI</span>
                     </h2>
-                    <p class="philosophy-lead">
-                        STANDAR KUALITAS YOK BANGUN.ID
+                    <p class="process-desc reveal-fade-up delay-1">
+                        Konstruksi berkualitas tinggi tidak hanya dinilai dari apa yang tampak pada tahap akhir, tetapi
+                        berakar dari kedalaman pondasi dan ketelitian pelaksanaan.
                     </p>
                 </div>
-                
-                <div class="philosophy-content-col">
-                    
-                    <div class="philosophy-block">
-                        <h3 class="block-title">PRESISI TEKNIS &amp; MUTU MATERIAL TANPA KOMPROMI</h3>
-                        <p class="block-desc">
-                            Konstruksi berkualitas tinggi tidak hanya dinilai dari apa yang tampak pada tahap akhir. Kualitas sejati berakar dari kedalaman pondasi, pembesian beton bertulang berstandar SNI, ketelitian instalasi mekanikal-elektrikal, serta pemilihan material terbaik yang tahan cuaca tropis puluhan tahun ke depan.
-                        </p>
-                    </div>
 
-                    <div class="philosophy-block">
-                        <h3 class="block-title">DISIPLIN BIAYA &amp; MANAJEMEN RAB TRANSPARAN</h3>
-                        <p class="block-desc">
-                            Kami menerapkan manajemen Rencana Anggaran Biaya (RAB) yang sangat rinci dan transparan sejak awal sebelum peletakan batu pertama. Kami bertekad menjaga variansi biaya tetap terukur, tanpa biaya tersembunyi, sehingga proyek Anda selesai tepat waktu dan sesuai anggaran yang disepakati.
-                        </p>
-                    </div>
+                <div class="process-steps-col">
+                    <div class="process-steps-list">
 
-                    <div class="philosophy-block">
-                        <h3 class="block-title">KOLABORASI MENYELURUH DARI AWAL HINGGA SELESAI</h3>
-                        <p class="block-desc">
-                            Mulai dari survei kontur tanah lapangan, pembuatan gambar 3D rendering fotorealistik, gambar bestek kerja arsitektur &amp; struktur, hingga serah terima kunci — tim kami mendampingi setiap tahapan pembangunan dengan laporan berkala yang dapat Anda pantau setiap saat.
-                        </p>
-                    </div>
+                        <div class="step-card reveal-card delay-1">
+                            <div class="step-num">01</div>
+                            <div class="step-content">
+                                <h3>PRESISI TEKNIS &amp; MUTU MATERIAL TANPA KOMPROMI</h3>
+                                <p>Konstruksi berkualitas tinggi tidak hanya dinilai dari apa yang tampak pada tahap
+                                    akhir. Kualitas sejati berakar dari kedalaman pondasi, pembesian beton bertulang
+                                    berstandar SNI, ketelitian instalasi mekanikal-elektrikal, serta pemilihan material
+                                    terbaik yang tahan cuaca tropis puluhan tahun ke depan.</p>
+                            </div>
+                        </div>
 
+                        <div class="step-card reveal-card delay-2">
+                            <div class="step-num">02</div>
+                            <div class="step-content">
+                                <h3>DISIPLIN BIAYA &amp; MANAJEMEN RAB TRANSPARAN</h3>
+                                <p>Kami menerapkan manajemen Rencana Anggaran Biaya (RAB) yang sangat rinci dan
+                                    transparan sejak awal sebelum peletakan batu pertama. Kami bertekad menjaga variansi
+                                    biaya tetap terukur, tanpa biaya tersembunyi, sehingga proyek Anda selesai tepat
+                                    waktu dan sesuai anggaran yang disepakati.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-card reveal-card delay-3">
+                            <div class="step-num">03</div>
+                            <div class="step-content">
+                                <h3>KOLABORASI MENYELURUH DARI AWAL HINGGA SELESAI</h3>
+                                <p>Mulai dari survei kontur tanah lapangan, pembuatan gambar 3D rendering fotorealistik,
+                                    gambar bestek kerja arsitektur &amp; struktur, hingga serah terima kunci — tim kami
+                                    mendampingi setiap tahapan pembangunan dengan laporan berkala yang dapat Anda pantau
+                                    setiap saat.</p>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Interactive Design Gallery Filter Section -->
+    <!-- 7. Running Marquee Ticker -->
+    <section class="marquee-container" aria-hidden="true">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>YOK BANGUN.ID</span>
+                <span class="marquee-dot"></span>
+                <span class="outline-txt">Arsitektur</span>
+                <span class="marquee-dot"></span>
+                <span>YOK BANGUN.ID</span>
+                <span class="marquee-dot"></span>
+                <span class="outline-txt">Konstruksi</span>
+                <span class="marquee-dot"></span>
+            </div>
+            <div class="marquee-content">
+                <span>YOK BANGUN.ID</span>
+                <span class="marquee-dot"></span>
+                <span class="outline-txt">Arsitektur</span>
+                <span class="marquee-dot"></span>
+                <span>YOK BANGUN.ID</span>
+                <span class="marquee-dot"></span>
+                <span class="outline-txt">Konstruksi</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Section "GALERI KONSEP ARSITEKTUR" (#gallery) -->
     <section id="gallery" class="gallery-section">
         <div class="container-wide">
-            <div class="gallery-header">
-                <span class="sub-header">EKSPLORASI DESAIN</span>
-                <h2 class="main-header">GALERI KONSEP ARSITEKTUR</h2>
-                
-                <!-- Category Filters -->
-                <div class="filter-bar">
-                    <button class="filter-tag active" data-filter="all">SEMUA</button>
-                    <button class="filter-tag" data-filter="kost">KOST EXCLUSIVE</button>
-                    <button class="filter-tag" data-filter="rumah450">RUMAH 450 JT</button>
-                    <button class="filter-tag" data-filter="scandinavian">SCANDINAVIAN</button>
-                    <button class="filter-tag" data-filter="rumah2jt">RUMAH 2 JT/M²</button>
+            <div class="gallery-top-bar">
+                <div class="gallery-title-wrap">
+                    <span class="section-kicker reveal-tag">EKSPLORASI DESAIN</span>
+                    <h2 class="services-headline reveal-mask">
+                        <span class="reveal-mask-inner">GALERI KONSEP ARSITEKTUR</span>
+                    </h2>
+                </div>
+
+                <!-- Category Filters matching original site -->
+                <div class="filter-pills-row reveal-fade-up delay-2">
+                    <button class="filter-btn active" data-filter="all">SEMUA</button>
+                    <button class="filter-btn" data-filter="kost">KOST EXCLUSIVE</button>
+                    <button class="filter-btn" data-filter="rumah450">RUMAH 450 JT</button>
+                    <button class="filter-btn" data-filter="scandinavian">SCANDINAVIAN</button>
+                    <button class="filter-btn" data-filter="rumah2jt">RUMAH 2 JT/M²</button>
+                    <button class="filter-btn" data-filter="klinik">PROYEK FISIK</button>
                 </div>
             </div>
 
-            <div class="gallery-masonry" id="galleryGrid">
-                
+            <div class="gallery-masonry-grid" id="galleryGrid">
+
                 <!-- Kost items -->
-                <div class="masonry-item" data-category="kost">
-                    <div class="masonry-card">
-                        <img src="assets/DESIGN/KOST EXCLUSIVE 30 KAMAR/TAMPAK DEPAN.png" alt="Kost 30 Kamar - Tampak Depan">
-                        <div class="card-caption">
-                            <h4>Kost Exclusive 30 Kamar (3 Lantai)</h4>
-                            <span>Fasad Megah &amp; Akses Terpadu</span>
-                        </div>
+                <div class="gallery-card reveal-card" data-category="kost">
+                    <div class="gallery-img-box">
+                        <img src="assets/DESIGN/KOST EXCLUSIVE 30 KAMAR/TAMPAK DEPAN.png"
+                            alt="Kost 30 Kamar - Tampak Depan">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Kost Exclusive 30 Kamar (3 Lantai)</h4>
+                        <span>Fasad Megah &amp; Akses Terpadu</span>
                     </div>
                 </div>
 
-                <div class="masonry-item" data-category="kost">
-                    <div class="masonry-card">
-                        <img src="assets/DESIGN/KOST EXCLUSIVE 30 KAMAR/DETAIL INTERIOR KAMAR.png" alt="Detail Interior Kamar Kost">
-                        <div class="card-caption">
-                            <h4>Detail Interior Kamar Kost</h4>
-                            <span>Tata Ruang Ergonomis &amp; Modern</span>
-                        </div>
+                <div class="gallery-card reveal-card delay-1" data-category="kost">
+                    <div class="gallery-img-box">
+                        <img src="assets/DESIGN/KOST EXCLUSIVE 30 KAMAR/DETAIL INTERIOR KAMAR.png"
+                            alt="Detail Interior Kamar Kost">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Detail Interior Kamar Kost</h4>
+                        <span>Tata Ruang Ergonomis &amp; Modern</span>
                     </div>
                 </div>
 
-                <div class="masonry-item" data-category="kost">
-                    <div class="masonry-card">
+                <div class="gallery-card reveal-card delay-2" data-category="kost">
+                    <div class="gallery-img-box">
                         <img src="assets/DESIGN/KOST EXCLUSIVE 30 KAMAR/DESIGN GARASI.png" alt="Desain Garasi Kost">
-                        <div class="card-caption">
-                            <h4>Area Parkir &amp; Garasi</h4>
-                            <span>Kapasitas 6 Mobil &amp; 30+ Motor</span>
-                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Area Parkir &amp; Garasi</h4>
+                        <span>Kapasitas 6 Mobil &amp; 30+ Motor</span>
                     </div>
                 </div>
 
                 <!-- Rumah 450 JT -->
-                <div class="masonry-item" data-category="rumah450">
-                    <div class="masonry-card">
+                <div class="gallery-card reveal-card" data-category="rumah450">
+                    <div class="gallery-img-box">
                         <img src="assets/DESIGN/RUMAH 450 JT/home 1.png" alt="Rumah 450 JT Fasad Utama">
-                        <div class="card-caption">
-                            <h4>Modern Minimalis Elegan</h4>
-                            <span>Desain Alternatif Fasad 1</span>
-                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Modern Minimalis Elegan</h4>
+                        <span>Desain Alternatif Fasad 1</span>
                     </div>
                 </div>
 
-                <div class="masonry-item" data-category="rumah450">
-                    <div class="masonry-card">
+                <div class="gallery-card reveal-card delay-1" data-category="rumah450">
+                    <div class="gallery-img-box">
                         <img src="assets/DESIGN/RUMAH 450 JT/home 3.png" alt="Rumah 450 JT Alternatif 3">
-                        <div class="card-caption">
-                            <h4>Kontemporer Tropis</h4>
-                            <span>Desain Alternatif Fasad 3</span>
-                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Kontemporer Tropis</h4>
+                        <span>Desain Alternatif Fasad 3</span>
                     </div>
                 </div>
 
-                <div class="masonry-item" data-category="rumah450">
-                    <div class="masonry-card">
+                <div class="gallery-card reveal-card delay-2" data-category="rumah450">
+                    <div class="gallery-img-box">
                         <img src="assets/DESIGN/RUMAH 450 JT/home 5.png" alt="Rumah 450 JT Malam Hari">
-                        <div class="card-caption">
-                            <h4>Pencahayaan Fasad Malam</h4>
-                            <span>Detail Aksen LED Warm Light</span>
-                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Pencahayaan Fasad Malam</h4>
+                        <span>Detail Aksen LED Warm Light</span>
                     </div>
                 </div>
 
                 <!-- Scandinavian 2,5 Jt Per Meter -->
-                <div class="masonry-item" data-category="scandinavian">
-                    <div class="masonry-card">
-                        <img src="assets/DESIGN/SCANDINAVIAN 2,5 JT PERMETER/Tampak Depan.png" alt="Rumah Scandinavian Tampak Depan Fasad">
-                        <div class="card-caption">
-                            <h4>Scandinavian 2.5 Jt / m² — Tampak Depan</h4>
-                            <span>Fasad Aksen Kayu, Carport Modern &amp; Jendela Bulat Ikonik</span>
-                        </div>
+                <div class="gallery-card reveal-card" data-category="scandinavian">
+                    <div class="gallery-img-box">
+                        <img src="assets/DESIGN/SCANDINAVIAN 2,5 JT PERMETER/Tampak Depan.png"
+                            alt="Rumah Scandinavian Tampak Depan Fasad">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Scandinavian 2.5 Jt / m² — Tampak Depan</h4>
+                        <span>Fasad Aksen Kayu, Carport Modern &amp; Jendela Bulat Ikonik</span>
                     </div>
                 </div>
 
-                <div class="masonry-item" data-category="scandinavian">
-                    <div class="masonry-card">
-                        <img src="assets/DESIGN/SCANDINAVIAN 2,5 JT PERMETER/Denah.png" alt="Denah Rumah Scandinavian Luas Tanah 100 M2">
-                        <div class="card-caption">
-                            <h4>Denah &amp; Konsep Scandinavian (LT 100 m² LB ±70 m²)</h4>
-                            <span>2 KT, 1 KM, Dapur, R. Tamu, Taman Depan &amp; Belakang</span>
-                        </div>
+                <div class="gallery-card reveal-card delay-1" data-category="scandinavian">
+                    <div class="gallery-img-box">
+                        <img src="assets/DESIGN/SCANDINAVIAN 2,5 JT PERMETER/Denah.png"
+                            alt="Denah Rumah Scandinavian Luas Tanah 100 M2">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Denah &amp; Konsep Scandinavian (LT 100 m² LB ±70 m²)</h4>
+                        <span>2 KT, 1 KM, Dapur, R. Tamu, Taman Depan &amp; Belakang</span>
                     </div>
                 </div>
 
-                <div class="masonry-item" data-category="scandinavian">
-                    <div class="masonry-card">
-                        <img src="assets/DESIGN/SCANDINAVIAN 2,5 JT PERMETER/Desain 1.png" alt="Scandinavian Tampak Belakang dan Samping">
-                        <div class="card-caption">
-                            <h4>Tampak Belakang &amp; Samping Kiri-Kanan</h4>
-                            <span>Bukaan Lebar Cahaya Alami &amp; Sirkulasi Udara Silang</span>
-                        </div>
+                <div class="gallery-card reveal-card delay-2" data-category="scandinavian">
+                    <div class="gallery-img-box">
+                        <img src="assets/DESIGN/SCANDINAVIAN 2,5 JT PERMETER/Desain 1.png"
+                            alt="Scandinavian Tampak Belakang dan Samping">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Tampak Belakang &amp; Samping Kiri-Kanan</h4>
+                        <span>Bukaan Lebar Cahaya Alami &amp; Sirkulasi Udara Silang</span>
                     </div>
                 </div>
 
-                <div class="masonry-item" data-category="scandinavian">
-                    <div class="masonry-card">
-                        <img src="assets/DESIGN/SCANDINAVIAN 2,5 JT PERMETER/desain 2.png" alt="4 Sisi Bangunan Scandinavian">
-                        <div class="card-caption">
-                            <h4>Koleksi 4 Sudut Fasad Eksterior</h4>
-                            <span>Komposisi Harmonis Tampak Depan, Kanan, Kiri, &amp; Belakang</span>
-                        </div>
+                <div class="gallery-card reveal-card delay-3" data-category="scandinavian">
+                    <div class="gallery-img-box">
+                        <img src="assets/DESIGN/SCANDINAVIAN 2,5 JT PERMETER/desain 2.png"
+                            alt="4 Sisi Bangunan Scandinavian">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Koleksi 4 Sudut Fasad Eksterior</h4>
+                        <span>Komposisi Harmonis Tampak Depan, Kanan, Kiri, &amp; Belakang</span>
                     </div>
                 </div>
 
-                <div class="masonry-item" data-category="scandinavian">
-                    <div class="masonry-card">
-                        <img src="assets/DESIGN/SCANDINAVIAN 2,5 JT PERMETER/Luas Tanah.png" alt="Survei Lahan Asli Scandinavian">
-                        <div class="card-caption">
-                            <h4>Kondisi Tanah Saat Survei Lahan</h4>
-                            <span>Dokumentasi Tanah 10x10 m Sebelum Proses Konstruksi</span>
-                        </div>
+                <div class="gallery-card reveal-card" data-category="scandinavian">
+                    <div class="gallery-img-box">
+                        <img src="assets/DESIGN/SCANDINAVIAN 2,5 JT PERMETER/Luas Tanah.png"
+                            alt="Survei Lahan Asli Scandinavian">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Kondisi Tanah Saat Survei Lahan</h4>
+                        <span>Dokumentasi Tanah 10x10 m Sebelum Proses Konstruksi</span>
                     </div>
                 </div>
 
                 <!-- Rumah Mulai 2 Jt-an -->
-                <div class="masonry-item" data-category="rumah2jt">
-                    <div class="masonry-card">
-                        <img src="assets/DESIGN/RUMAH MULAI DR 2JTAAN PERMETER/HOME 1.png" alt="Rumah 35 M2 Mewah & Fungsional">
-                        <div class="card-caption">
-                            <h4>Rumah 35 m² Type Kompak Mewah</h4>
-                            <span>Spesifikasi 2 Kamar Tidur &amp; Carport</span>
-                        </div>
+                <div class="gallery-card reveal-card delay-1" data-category="rumah2jt">
+                    <div class="gallery-img-box">
+                        <img src="assets/DESIGN/RUMAH MULAI DR 2JTAAN PERMETER/HOME 1.png"
+                            alt="Rumah 35 M2 Mewah & Fungsional">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Rumah 35 m² Type Kompak Mewah</h4>
+                        <span>Spesifikasi 2 Kamar Tidur &amp; Carport</span>
                     </div>
                 </div>
 
-                <div class="masonry-item" data-category="rumah2jt">
-                    <div class="masonry-card">
-                        <img src="assets/DESIGN/RUMAH MULAI DR 2JTAAN PERMETER/HOME 2.png" alt="Detail Denah Rumah 35 M2">
-                        <div class="card-caption">
-                            <h4>Denah &amp; Pembagian Ruangan</h4>
-                            <span>Efisiensi Ruang Optimal 6 x 12 M</span>
-                        </div>
+                <div class="gallery-card reveal-card delay-2" data-category="rumah2jt">
+                    <div class="gallery-img-box">
+                        <img src="assets/DESIGN/RUMAH MULAI DR 2JTAAN PERMETER/HOME 2.png"
+                            alt="Detail Denah Rumah 35 M2">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Denah &amp; Pembagian Ruangan</h4>
+                        <span>Efisiensi Ruang Optimal 6 x 12 M</span>
+                    </div>
+                </div>
+
+                <!-- Proyek Fisik Nyata: Klinik Wonogiri -->
+                <div class="gallery-card reveal-card" data-category="klinik">
+                    <div class="gallery-img-box">
+                        <img src="assets/PORTOFOLIO/PEMBANGUNAN KLINIK BABY SPA dr S GIRIWON WONOGIRI 3024/dokumentasi before-after/WhatsApp Image 2026-09-02 at 11.30.29.jpeg"
+                            alt="Konstruksi Pembangunan Klinik dr S">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Klinik dr. S — Fasad &amp; Struktur 2 Lantai</h4>
+                        <span>Struktur Beton Bertulang di Giriwono, Wonogiri</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card reveal-card delay-1" data-category="klinik">
+                    <div class="gallery-img-box">
+                        <img src="assets/PORTOFOLIO/PEMBANGUNAN KLINIK BABY SPA dr S GIRIWON WONOGIRI 3024/dokumentasi before-after/WhatsApp Image 2026-09-02 at 11.30.28.jpeg"
+                            alt="Pengecoran Dak Lantai 2 dan Pasangan Dinding Bata">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Pengecoran Dak Lantai 2 &amp; Pasangan Dinding</h4>
+                        <span>Dokumentasi Lapangan Bata Merah Solid &amp; Kolom Utama</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card reveal-card delay-2" data-category="klinik">
+                    <div class="gallery-img-box">
+                        <img src="assets/PORTOFOLIO/PEMBANGUNAN KLINIK BABY SPA dr S GIRIWON WONOGIRI 3024/dokumentasi before-after/WhatsApp Image 2026-09-02 at 11.38.26.jpeg"
+                            alt="Finishing Plester Aci dan Instalasi Gedung">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Plester Aci &amp; Instalasi Gedung</h4>
+                        <span>Pekerjaan Dinding Presisi &amp; Standar Fasilitas Medis</span>
                     </div>
                 </div>
 
@@ -432,42 +765,51 @@
         </div>
     </section>
 
-    <!-- Real Construction Execution Portfolio (Klinik Baby Spa dr. S Giriwono Wonogiri) -->
+    <!-- 9. Section "BUKTI KONSTRUKSI NYATA" (#portfolio-clinic) -->
     <section id="portfolio-clinic" class="execution-portfolio-section">
         <div class="container-wide">
             <div class="execution-header">
-                <span class="sub-header">BUKTI KONSTRUKSI NYATA</span>
-                <h2 class="main-header">PEMBANGUNAN KLINIK BABY SPA dr. S</h2>
-                <p class="execution-sub">GIRIWONO, WONOGIRI — TAHAP 1 SAMPAI SELESAI</p>
+                <span class="section-kicker reveal-tag">BUKTI KONSTRUKSI NYATA</span>
+                <h2 class="services-headline reveal-mask">
+                    <span class="reveal-mask-inner">PEMBANGUNAN KLINIK BABY SPA dr. S</span>
+                </h2>
+                <p class="execution-sub reveal-fade-up delay-1">GIRIWONO, WONOGIRI — TAHAP 1 SAMPAI SELESAI</p>
             </div>
 
-            <div class="execution-mosaic">
-                
+            <div class="execution-mosaic reveal-card delay-2">
+
                 <div class="mosaic-main">
-                    <img src="assets/PORTOFOLIO/PEMBANGUNAN KLINIK BABY SPA dr S GIRIWON WONOGIRI 3024/dokumentasi before-after/WhatsApp Image 2026-09-02 at 11.30.29.jpeg" alt="Konstruksi Pembangunan Klinik dr S">
+                    <img src="assets/PORTOFOLIO/PEMBANGUNAN KLINIK BABY SPA dr S GIRIWON WONOGIRI 3024/dokumentasi before-after/WhatsApp Image 2026-09-02 at 11.30.29.jpeg"
+                        alt="Konstruksi Pembangunan Klinik dr S">
                     <div class="mosaic-overlay">
                         <span class="mosaic-tag">PROYEK FISIK BERJALAN</span>
                         <h3>Pembangunan Struktur 2 Lantai</h3>
-                        <p>Struktur beton bertulang kokoh dengan perancah bambu presisi dan dinding bata merah solid.</p>
-                        <a href="project-detail.html?id=klinik-baby-spa" class="mosaic-link-btn">Lihat Detail Portofolio Klinik &rarr;</a>
+                        <p>Struktur beton bertulang kokoh dengan perancah bambu presisi dan dinding bata merah solid.
+                        </p>
+                        <a href="project-detail.html?id=klinik-baby-spa" class="mosaic-link-btn">Lihat Detail Portofolio
+                            Klinik &rarr;</a>
                     </div>
                 </div>
 
                 <div class="mosaic-side">
                     <div class="mosaic-thumb">
-                        <img src="assets/PORTOFOLIO/PEMBANGUNAN KLINIK BABY SPA dr S GIRIWON WONOGIRI 3024/dokumentasi before-after/WhatsApp Image 2026-09-02 at 11.30.28.jpeg" alt="Proses Pengecoran Dak Lantai 2">
+                        <img src="assets/PORTOFOLIO/PEMBANGUNAN KLINIK BABY SPA dr S GIRIWON WONOGIRI 3024/dokumentasi before-after/WhatsApp Image 2026-09-02 at 11.30.28.jpeg"
+                            alt="Proses Pengecoran Dak Lantai 2">
                         <span class="thumb-lbl">Pengecoran Lantai 2</span>
                     </div>
                     <div class="mosaic-thumb">
-                        <img src="assets/PORTOFOLIO/PEMBANGUNAN KLINIK BABY SPA dr S GIRIWON WONOGIRI 3024/dokumentasi before-after/WhatsApp Image 2026-09-02 at 11.38.26.jpeg" alt="Progress Pemasangan Dinding Bata">
+                        <img src="assets/PORTOFOLIO/PEMBANGUNAN KLINIK BABY SPA dr S GIRIWON WONOGIRI 3024/dokumentasi before-after/WhatsApp Image 2026-09-02 at 11.38.26.jpeg"
+                            alt="Progress Pemasangan Dinding Bata">
                         <span class="thumb-lbl">Pasangan Dinding &amp; Kolom</span>
                     </div>
                     <div class="mosaic-thumb">
-                        <img src="assets/PORTOFOLIO/PEMBANGUNAN KLINIK BABY SPA dr S GIRIWON WONOGIRI 3024/dokumentasi before-after/WhatsApp Image 2026-09-02 at 11.45.44.jpeg" alt="Detail Pekerjaan Plester & Aci">
+                        <img src="assets/PORTOFOLIO/PEMBANGUNAN KLINIK BABY SPA dr S GIRIWON WONOGIRI 3024/dokumentasi before-after/WhatsApp Image 2026-09-02 at 11.45.44.jpeg"
+                            alt="Detail Pekerjaan Plester & Aci">
                         <span class="thumb-lbl">Pekerjaan Plester Aci</span>
                     </div>
                     <div class="mosaic-thumb">
-                        <img src="assets/PORTOFOLIO/PEMBANGUNAN KLINIK BABY SPA dr S GIRIWON WONOGIRI 3024/dokumentasi before-after/WhatsApp Image 2026-09-02 at 11.46.26.jpeg" alt="Finishing dan Tahap Akhir">
+                        <img src="assets/PORTOFOLIO/PEMBANGUNAN KLINIK BABY SPA dr S GIRIWON WONOGIRI 3024/dokumentasi before-after/WhatsApp Image 2026-09-02 at 11.46.26.jpeg"
+                            alt="Finishing dan Tahap Akhir">
                         <span class="thumb-lbl">Finishing Interior &amp; Cat</span>
                     </div>
                 </div>
@@ -476,142 +818,120 @@
         </div>
     </section>
 
-    <!-- Services Overview / Layanan Utama -->
-    <section class="services-minimal-section">
+    <!-- 10. Section Kontak & Informasi Kantor / Workshop (#contact) -->
+    <section id="contact" class="contact-section">
         <div class="container-wide">
-            <div class="services-header-row">
-                <span class="sub-header">KEAHLIAN KAMI</span>
-                <h2 class="main-header">LAYANAN UTAMA</h2>
-            </div>
+            <div class="contact-grid">
 
-            <div class="services-row">
-                <div class="service-box">
-                    <span class="service-num">01</span>
-                    <h3 class="service-name">Desain Arsitektur &amp; 3D</h3>
-                    <p class="service-text">Visualisasi 3D rendering fotorealistik, gambar kerja IMB/PBG, denah tata ruang fungsional, dan detail fasad modern.</p>
-                </div>
-                <div class="service-box">
-                    <span class="service-num">02</span>
-                    <h3 class="service-name">Bangun Rumah Tinggal</h3>
-                    <p class="service-text">Pembangunan rumah baru mulai dari Rp 2 Jt-an/m² hingga rumah mewah berkonsep Scandinavian dan modern kontemporer.</p>
-                </div>
-                <div class="service-box">
-                    <span class="service-num">03</span>
-                    <h3 class="service-name">Kost &amp; Komersial</h3>
-                    <p class="service-text">Pembangunan kost eksklusif, ruko, klinik, dan tempat usaha dengan orientasi imbal hasil (ROI) yang optimal.</p>
-                </div>
-                <div class="service-box">
-                    <span class="service-num">04</span>
-                    <h3 class="service-name">Renovasi &amp; Penambahan</h3>
-                    <p class="service-text">Transformasi hunian lama menjadi baru, peningkatan lantai bangunan, perbaikan struktur, dan renovasi interior.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Social Media Section (Direct WhatsApp, Gmail, Instagram, Location) -->
-    <section id="contact" class="contact-editorial-section">
-        <div class="container-wide">
-            <div class="contact-container-grid">
-                
-                <div class="contact-text-side">
-                    <span class="sub-header">HUBUNGI KAMI</span>
-                    <h2 class="contact-main-heading">MULAI PROYEK IMPIAN ANDA</h2>
-                    <p class="contact-intro">
-                        Diskusikan ide dan rancangan bangunan Anda bersama tim arsitek dan kontraktor kami. Kami siap melayani konsultasi gratis dan survei lokasi.
+                <div class="contact-text-col">
+                    <span class="section-kicker reveal-tag">HUBUNGI KAMI</span>
+                    <h2 class="services-headline reveal-mask">
+                        <span class="reveal-mask-inner">MULAI PROYEK IMPIAN ANDA</span>
+                    </h2>
+                    <p class="services-lead reveal-fade-up delay-1">
+                        Diskusikan ide dan rancangan bangunan Anda bersama tim arsitek dan kontraktor kami. Kami siap
+                        melayani konsultasi gratis dan survei lokasi.
                     </p>
 
-                    <div class="direct-contact-list">
-                        
-                        <!-- WhatsApp Button -->
-                        <a href="https://wa.me/6285742926695?text=Halo%20YOK%20BANGUN.ID,%20saya%20ingin%20konsultasi%20mengenai%20desain%20atau%20pembangunan." target="_blank" rel="noopener" class="contact-action-card wa-card">
-                            <div class="icon-circle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    <div class="contact-channels-list">
+
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/6285742926695?text=Halo%20YOK%20BANGUN.ID,%20saya%20ingin%20konsultasi%20mengenai%20desain%20atau%20pembangunan."
+                            target="_blank" rel="noopener" class="contact-card-item reveal-card delay-1">
+                            <div class="contact-icon-circle">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                </svg>
                             </div>
-                            <div class="card-info">
-                                <span class="card-channel">WHATSAPP (CHAT &amp; TELEPON)</span>
-                                <strong class="card-val">0857-4292-6695</strong>
+                            <div class="contact-info-text">
+                                <span class="contact-info-label">WHATSAPP (CHAT &amp; TELEPON)</span>
+                                <span class="contact-info-val">0857-4292-6695</span>
                             </div>
-                            <span class="card-arrow">&#x2192;</span>
+                            <span class="contact-card-arrow">&rarr;</span>
                         </a>
 
-                        <!-- Gmail Button -->
-                        <a href="mailto:YOKBANGUNID@GMAIL.COM" class="contact-action-card gmail-card">
-                            <div class="icon-circle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+                        <!-- Email -->
+                        <a href="mailto:YOKBANGUNID@GMAIL.COM" class="contact-card-item reveal-card delay-2">
+                            <div class="contact-icon-circle">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7" />
+                                </svg>
                             </div>
-                            <div class="card-info">
-                                <span class="card-channel">EMAIL RESMI</span>
-                                <strong class="card-val">YOKBANGUNID@GMAIL.COM</strong>
+                            <div class="contact-info-text">
+                                <span class="contact-info-label">EMAIL RESMI</span>
+                                <span class="contact-info-val">YOKBANGUNID@GMAIL.COM</span>
                             </div>
-                            <span class="card-arrow">&#x2192;</span>
+                            <span class="contact-card-arrow">&rarr;</span>
                         </a>
 
-                        <!-- Instagram Button -->
-                        <a href="https://www.instagram.com/yokbangun.id/" target="_blank" rel="noopener" class="contact-action-card ig-card">
-                            <div class="icon-circle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/yokbangun.id/" target="_blank" rel="noopener"
+                            class="contact-card-item reveal-card delay-3">
+                            <div class="contact-icon-circle">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                                </svg>
                             </div>
-                            <div class="card-info">
-                                <span class="card-channel">INSTAGRAM</span>
-                                <strong class="card-val">@yokbangun.id</strong>
+                            <div class="contact-info-text">
+                                <span class="contact-info-label">INSTAGRAM</span>
+                                <span class="contact-info-val">@yokbangun.id</span>
                             </div>
-                            <span class="card-arrow">&#x2192;</span>
+                            <span class="contact-card-arrow">&rarr;</span>
                         </a>
 
-                        <!-- Location Detail -->
-                        <div class="contact-action-card location-card">
-                            <div class="icon-circle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <!-- Alamat Kantor -->
+                        <div class="contact-card-item reveal-card delay-4" style="cursor: default;">
+                            <div class="contact-icon-circle">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
                             </div>
-                            <div class="card-info">
-                                <span class="card-channel">ALAMAT KANTOR &amp; STUDIO</span>
-                                <span class="card-val-text">Hargosari, Sraten, Kec. Gatak, Kabupaten Sukoharjo, Jawa Tengah</span>
+                            <div class="contact-info-text">
+                                <span class="contact-info-label">ALAMAT KANTOR &amp; STUDIO</span>
+                                <span class="contact-info-val">Hargosari, Sraten, Kec. Gatak, Kabupaten Sukoharjo, Jawa
+                                    Tengah</span>
                             </div>
                         </div>
 
                     </div>
                 </div>
 
-                <!-- Location Card -->
-                <div class="contact-location-showcase">
-                    <div class="location-box-inner">
-                        <span class="location-kicker">INFORMASI LOKASI WORKSHOP &amp; STUDIO</span>
-                        <h3 class="location-heading">KANTOR &amp; WORKSHOP</h3>
-                        <p class="location-address">
-                            <strong>YOK BANGUN.ID</strong><br>
-                            Hargosari, Sraten, Kec. Gatak,<br>
-                            Kabupaten Sukoharjo, Jawa Tengah
-                        </p>
-                        
-                        <div class="location-details-list">
-                            <div class="loc-item">
-                                <span class="loc-lbl">WILAYAH LAYANAN UTAMA</span>
-                                <span class="loc-val">Sukoharjo, Surakarta (Solo), Boyolali, Karanganyar, Wonogiri, Klaten &amp; Sekitarnya</span>
-                            </div>
-                            <div class="loc-item">
-                                <span class="loc-lbl">SURVEI LOKASI</span>
-                                <span class="loc-val">Tersedia layanan survei langsung ke lahan/lokasi bangunan Anda</span>
-                            </div>
-                        </div>
-
-                        <div class="location-cta-box">
-                            <a href="https://wa.me/6285742926695?text=Halo%20YOK%20BANGUN.ID,%20saya%20ingin%20jadwalkan%20survei%20lokasi%20atau%20konsultasi." target="_blank" rel="noopener" class="location-btn">
-                                Jadwalkan Temu / Survei Lokasi
-                            </a>
+                <!-- Workshop Showcase Box -->
+                <div class="workshop-box reveal-card delay-2">
+                    <span class="workshop-kicker">INFORMASI LOKASI WORKSHOP &amp; STUDIO</span>
+                    <h3 class="workshop-heading">KANTOR &amp; WORKSHOP</h3>
+                    <p class="workshop-address">
+                        <strong>YOK BANGUN.ID</strong><br>
+                        Hargosari, Sraten, Kec. Gatak,<br>
+                        Kabupaten Sukoharjo, Jawa Tengah
+                    </p>
+                    <div class="workshop-bullets">
+                        <div class="wb-item">
+                            <strong>SURVEI LOKASI:</strong> Tersedia layanan survei langsung ke lahan/lokasi bangunan
+                            Anda.
                         </div>
                     </div>
+                    <a href="https://wa.me/6285742926695?text=Halo%20YOK%20BANGUN.ID,%20saya%20ingin%20jadwalkan%20survei%20lokasi%20atau%20konsultasi."
+                        target="_blank" rel="noopener" class="workshop-cta-btn">
+                        Jadwalkan Temu / Survei Lokasi &rarr;
+                    </a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- 12. Footer -->
     <footer class="site-footer">
         <div class="container-wide">
-            <div class="footer-top">
-                <div class="footer-col-brand">
+            <div class="footer-top-grid">
+                <div>
                     <div class="footer-brand-title">YOK BANGUN.ID</div>
                     <p class="footer-tagline">
                         Arsitektur Kustom Mewah &amp; Konstruksi Presisi.<br>
@@ -619,52 +939,59 @@
                     </p>
                 </div>
 
-                <div class="footer-col-nav">
-                    <span class="footer-heading">NAVIGASI</span>
-                    <ul class="footer-links">
+                <div>
+                    <span class="footer-col-title">Navigasi</span>
+                    <ul class="footer-nav-list">
                         <li><a href="#hero">Beranda</a></li>
-                        <li><a href="#statement">Tentang Kami</a></li>
+                        <li><a href="#services">Layanan</a></li>
                         <li><a href="#selected-projects">Pilihan Proyek</a></li>
-                        <li><a href="#philosophy">Cara Kerja</a></li>
                         <li><a href="#gallery">Galeri Desain</a></li>
-                        <li><a href="#portfolio-clinic">Proyek Nyata</a></li>
                         <li><a href="#contact">Kontak</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-col-contact">
-                    <span class="footer-heading">HUBUNGI KAMI</span>
-                    <ul class="footer-links">
-                        <li><a href="https://wa.me/6285742926695" target="_blank" rel="noopener">WhatsApp: 0857-4292-6695</a></li>
+                <div>
+                    <span class="footer-col-title">Hubungi Kami</span>
+                    <ul class="footer-nav-list">
+                        <li><a href="https://wa.me/6285742926695" target="_blank" rel="noopener">WhatsApp:
+                                0857-4292-6695</a></li>
                         <li><a href="mailto:YOKBANGUNID@GMAIL.COM">Email: YOKBANGUNID@GMAIL.COM</a></li>
-                        <li><a href="https://www.instagram.com/yokbangun.id/" target="_blank" rel="noopener">Instagram: @yokbangun.id</a></li>
+                        <li><a href="https://www.instagram.com/yokbangun.id/" target="_blank" rel="noopener">Instagram:
+                                @yokbangun.id</a></li>
+                        <li style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 6px;">Hargosari,
+                            Sraten, Kec. Gatak, Kabupaten Sukoharjo, Jawa Tengah</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <p>&copy; 2024 YOK BANGUN.ID. Hak Cipta Dilindungi. Dibangun dengan Presisi Arsitektur &amp; Konstruksi.</p>
+            <div class="footer-bottom-row">
+                <p>&copy; 2024 YOK BANGUN.ID. Hak Cipta Dilindungi. Dibangun dengan Presisi Arsitektur &amp; Konstruksi.
+                </p>
+                <p>Arsitektur Kustom &amp; Konstruksi Presisi Solo Raya.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Direct Button -->
-    <a href="https://wa.me/6285742926695?text=Halo%20YOK%20BANGUN.ID,%20saya%20ingin%20konsultasi%20proyek." class="floating-wa-btn" target="_blank" rel="noopener" aria-label="Kontak WhatsApp">
-        <span class="wa-tooltip">Konsultasi Gratis</span>
-        <div class="wa-icon-wrapper">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        </div>
+    <!-- 13. Floating WhatsApp Direct Button -->
+    <a href="https://wa.me/6285742926695?text=Halo%20YOK%20BANGUN.ID,%20saya%20ingin%20konsultasi%20proyek."
+        class="floating-wa-btn" target="_blank" rel="noopener" aria-label="Kontak WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        <span>Konsultasi Gratis</span>
     </a>
 
-    <!-- Modal Lightbox for Image Zoom -->
+    <!-- 14. Lightbox Modal for Architectural Images -->
     <div class="lightbox-modal" id="lightboxModal">
-        <button class="lightbox-close-btn" id="lightboxClose">&times;</button>
-        <div class="lightbox-content">
-            <img src="" alt="Pratinjau Arsitektur Diperbesar" id="lightboxImage">
-            <div class="lightbox-caption" id="lightboxCaption"></div>
+        <div class="lightbox-box">
+            <button class="lightbox-close-btn" id="lightboxClose" aria-label="Tutup Pratinjau">&times;</button>
+            <img src="" alt="Pratinjau Arsitektur" id="lightboxImage">
+            <div class="lightbox-caption-text" id="lightboxCaption"></div>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

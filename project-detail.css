@@ -1,18 +1,36 @@
 /* ==========================================================
    YOK BANGUN.ID — Project Detail Page Styling
-   Editorial Architectural Aesthetic
+   Editorial Architectural Aesthetic — Harmonized Sage Green Theme
    ========================================================== */
 
+:root {
+    --color-gold: #9daf89;
+    --color-gold-hover: #82956f;
+    --color-white: #ffffff;
+    --color-black: #192018;
+    --color-dark: #232d20;
+    --color-dark-gray: #303d2d;
+    --color-gray-100: #f6f8f4;
+    --color-gray-200: #dbe4d3;
+    --color-gray-400: #8e9c8c;
+    --color-gray-600: #5a6659;
+}
+
 .detail-page-body {
-    background-color: var(--color-white);
-    color: var(--color-black);
+    background-color: var(--bg-page, #faf8f5);
+    color: var(--text-main, #18221c);
+    font-family: var(--font-primary, 'Plus Jakarta Sans', sans-serif);
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
 }
 
 /* ── Hero & Header Section ── */
 .detail-hero-section {
     padding-top: 130px;
     padding-bottom: 40px;
-    background: #0e0e10;
+    background: #1a2720;
     color: var(--color-white);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -778,8 +796,21 @@
 }
 
 @media (max-width: 480px) {
+    .detail-hero-section {
+        padding-top: 85px;
+        padding-bottom: 24px;
+    }
+
+    .detail-title {
+        font-size: clamp(1.65rem, 6.8vw, 2.2rem);
+    }
+
+    .detail-subtitle {
+        font-size: 0.88rem;
+    }
+
     .main-image-wrapper {
-        height: 260px;
+        height: 240px;
     }
 
     .project-stats-grid {
@@ -787,7 +818,7 @@
     }
 
     .stat-item-box {
-        padding: 14px 10px;
+        padding: 12px 10px;
     }
 
     .stat-value {
@@ -798,14 +829,37 @@
         font-size: 0.6rem;
     }
 
+    .editorial-heading {
+        font-size: clamp(1.4rem, 5.5vw, 1.8rem);
+    }
+
+    .editorial-paragraphs p {
+        font-size: 0.88rem;
+        line-height: 1.7;
+    }
+
+    .highlights-list li {
+        font-size: 0.84rem;
+    }
+
+    .specs-card-title {
+        font-size: 1.15rem;
+    }
+
     .spec-row {
         flex-direction: column;
         gap: 4px;
         padding-bottom: 10px;
+        font-size: 0.82rem;
     }
 
     .spec-v {
         text-align: left;
+    }
+
+    .custom-plan-btn {
+        padding: 12px 16px;
+        font-size: 0.78rem;
     }
 
     .gallery-card-img-wrap {
@@ -815,5 +869,15 @@
     .other-card-img {
         height: 180px;
     }
+
+    .cta-title {
+        font-size: 1.5rem;
+    }
+
+    .wa-large-btn {
+        padding: 13px 18px;
+        font-size: 0.78rem;
+    }
 }
+
 

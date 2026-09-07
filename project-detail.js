@@ -268,7 +268,7 @@ const PROJECTS_DATA = {
         name: 'PEMBANGUNAN KLINIK BABY SPA dr. S',
         badge: 'BUKTI KONSTRUKSI FISIK • SELESAI',
         subtitle: 'Dokumentasi nyata pelaksanaan konstruksi gedung komersial 2 lantai Klinik Baby Spa dr. S berlokasi di Giriwono, Wonogiri dari pondasi hingga serah terima.',
-        heroImage: 'assets/PORTOFOLIO/PEMBANGUNAN KLINIK BABY SPA dr S GIRIWON WONOGIRI 3024/dokumentasi before-after/WhatsApp Image 2026-09-02 at 11.30.29.jpeg',
+        heroImage: 'assets/PORTOFOLIO/PEMBANGUNAN KLINIK BABY SPA dr S GIRIWON WONOGIRI 3024/dokumentasi before-after/WhatsApp Image 2026-09-02 at 11.46.26.jpeg',
         stats: [
             { label: 'LOKASI PROYEK', value: 'Giriwono, Wonogiri', sub: 'Jawa Tengah' },
             { label: 'PERUNTUKAN', value: 'Klinik Kesehatan', sub: 'Fasilitas Baby Spa' },
@@ -488,6 +488,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 mainNav.classList.remove('active');
                 document.body.style.overflow = '';
             });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (mainNav.classList.contains('active') && !mainNav.contains(e.target) && !navToggle.contains(e.target)) {
+                navToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
     }
 

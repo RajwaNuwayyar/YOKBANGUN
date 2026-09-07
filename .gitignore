@@ -27,6 +27,7 @@ package-lock.json
 *.swp
 *.swo
 
-# Large Video Exports / Temp Render Files (Optional)
-# *.mp4
-# *.mov
+# Python cache & temporary scratch files
+__pycache__/
+*.pyc
+scratch/
