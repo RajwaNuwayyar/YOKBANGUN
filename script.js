@@ -94,16 +94,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
 
-        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.innerWidth > 860) {
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             stackCards.forEach((card) => {
                 gsap.from(card, {
                     scale: 0.94,
-                    opacity: 0.45,
+                    opacity: 0.55,
                     ease: 'none',
                     scrollTrigger: {
                         trigger: card,
                         start: 'top 92%',
-                        end: 'top 48%',
+                        end: 'top 46%',
                         scrub: true
                     }
                 });
@@ -122,34 +122,61 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ── 5. Horizontal Expanding Accordion Cards (Services) ──
+    // ── 5. Expanding Accordion Cards & Mobile Tab Switcher (Services) ──
     const serviceCards = document.querySelectorAll('.service-card');
+    const serviceTabBtns = document.querySelectorAll('.service-tab-btn');
+
+    function activateService(index) {
+        serviceCards.forEach((c, idx) => {
+            if (idx === index) {
+                c.classList.add('active');
+            } else {
+                c.classList.remove('active');
+            }
+        });
+        if (serviceTabBtns.length > 0) {
+            serviceTabBtns.forEach((btn, idx) => {
+                if (idx === index) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+    }
 
     if (serviceCards.length > 0) {
-        serviceCards.forEach(card => {
+        serviceCards.forEach((card, idx) => {
             // Hover interaction (for mouse/desktop)
             card.addEventListener('mouseenter', () => {
                 if (window.innerWidth > 860) {
-                    serviceCards.forEach(c => c.classList.remove('active'));
-                    card.classList.add('active');
+                    activateService(idx);
                 }
             });
 
-            // Click / Tap interaction (for tablet & mobile)
-            card.addEventListener('click', () => {
-                serviceCards.forEach(c => c.classList.remove('active'));
-                card.classList.add('active');
+            // Click / Tap interaction (for tablet & mobile & desktop)
+            card.addEventListener('click', (e) => {
+                if (e.target.closest('a')) return;
+                activateService(idx);
             });
 
             // Accessibility: Enter or Space key
             card.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    serviceCards.forEach(c => c.classList.remove('active'));
-                    card.classList.add('active');
+                    activateService(idx);
                 }
             });
         });
+
+        if (serviceTabBtns.length > 0) {
+            serviceTabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const idx = parseInt(btn.getAttribute('data-index'), 10);
+                    activateService(idx);
+                });
+            });
+        }
     }
 
 

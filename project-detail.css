@@ -22,7 +22,7 @@
     font-family: var(--font-primary, 'Plus Jakarta Sans', sans-serif);
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
     position: relative;
 }
 
